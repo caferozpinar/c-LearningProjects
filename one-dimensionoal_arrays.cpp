@@ -8,6 +8,7 @@ int temp = 0;
 int max = 0;
 int min = 60;
 int avg = 0;
+int smax=0;
 int main () {
         time_t tol;
         srand((unsigned int) time(&tol));
@@ -36,6 +37,16 @@ int main () {
 				max=array[i];
 			}
 		}
+		//find array's second maximum value.
+		for(int i = 0;i<15;i++)
+		{
+			if(array[i]==max) continue;
+			
+			else if(array[i]>smax)
+			{
+				smax=array[i];
+			}
+		}
 		//find array's minimum value.
 		for(int i = 0;i<15;i++)
 		{
@@ -53,6 +64,7 @@ int main () {
 		
 		printf("min value of array:%d\n",min);
 		printf("max value of array:%d\n",max);
+		printf("second max value of array:%d\n",smax);
 		printf("avg value of array:%d\n",avg);
 		
 		

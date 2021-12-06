@@ -1,40 +1,40 @@
 #include<stdio.h>
 #include<math.h>
-double fsonuc = 1;
-double sonuc = 0;
-int usonuc = 0;
+double factresult = 1;
+double result = 0;
+int powresult = 0;
 int x=0;
 double temp=0;
 //e^x = 1+x^1/1+x^2/2
-double faktoriyel(int a)
+double factorial(int a)
 {
-	fsonuc = 1.0;
+	factresult = 1.0;
 	for(int k=1;k<=a;k++)
 	{
-		fsonuc*=k;
+		factresult*=k;
 		
 	}
-	return fsonuc;
+	return factresult;
 }
-int us_al(int a , int b)
+int pow(int a , int b)
 {
-	usonuc=1;
+	powresult=1;
 	for(int h=1;h<=b;h++)
 	{
-		usonuc = a * usonuc;
+		powresult = a * powresult;
 	}
-	return usonuc;
+	return powresult;
 }
 int main()
 {
-    printf("hesaplanýcak deger e^");
+    printf("value to be calculated e^");
     scanf("%d",&x);
     for(int i=0;i<=15;i++)
     {
-    	sonuc+=(us_al(x,i) / faktoriyel(i));
+    	result+=(pow(x,i) / factorial(i));
 	}
-	printf("\nsonuc = %lf",sonuc);
-	printf("\ngercek sonuc = %lf",exp(x));
+	printf("\nresult = %lf",result);
+	printf("\nreal result = %lf",exp(x));
 }
 
 

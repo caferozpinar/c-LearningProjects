@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 int range = 0;
-int yazdir = 1;
+int print = 1;
 
 int main()
 {

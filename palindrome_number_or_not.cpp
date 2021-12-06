@@ -1,10 +1,10 @@
 #include<stdio.h>
 #include<math.h>
 
-float depo[20];
-int basamak=0;
-int deger=0;
-int sonuc = 0;
+float array[20];
+int digit=0;
+int value=0;
+int result = 0;
 //palindrome or not
 //1254%10     = ***4
 //1254%100    = **54
@@ -16,43 +16,38 @@ int main()
 
 	for(int b=0;b<=20;b++)
 	{
-		depo[b]=0;
+		array[b]=0;
 	}
 	
-	scanf("%d",&deger);
+	scanf("%d",&value);
 	
-	for(int i = 10;i <= deger*10  ;i*=10)
+	for(int i = 10;i <= value*10  ;i*=10)
 	{
-		basamak++;
-		depo[basamak]=deger%i;
+		digit++;
+		array[digit]=value%i;
 	}
-	//sayýyý altta belirtilen düzende arraye depoladýk.
     //1254%10     = ***4
     //1254%100    = **54
     //1254%1000   = *254
     //1254%10000  = 1254 
 	
-	for(int b=basamak;b>=1;b--)
+	for(int b=digit;b>=1;b--)
 	{
 		if(b>=1)
 		{
-		depo[b] = (depo[b]-depo[b-1]) / pow(10,b-1) ;
+		array[b] = (array[b]-array[b-1]) / pow(10,b-1) ;
 	    }	
-		printf("\n%lf",depo[b]);
+		printf("\n%lf",array[b]);
 	}
-	//sayýyý karþýlaþtýrma yapabilceðimiz rakamlara dönüþtürüp arraye depoladýk.
 	
-	 for(int k=1;k<=basamak/2;k++)
+	 for(int k=1;k<=digit/2;k++)
 	 {
-	 	if(depo[k]==depo[basamak+1-k])sonuc++;
+	 	if(array[k]==array[digit+1-k])result++;
 	 }
-	/*
-	sayýnýn iki tarafýndan sayýlarýn benzerliðini 
-	karþýlaþtýrarak palindrome olup olmadýðýna karar verdik. 
-	*/
+	
 	 
-	if(sonuc==basamak/2)printf("\npalindrome number");
+	if(result==digit/2)printf("\npalindrome number");
 	else printf("\nnot palindrome number");
-	//sonucu ekrana bastýrdýk
+	
 	return 0;
 }

@@ -3,15 +3,15 @@
 
 int main()
 {
-	int sonuc=0;
+	int result=0;
 	int x=0;
 	printf("enter a number:");
 	scanf("%d",&x);
 	for(int i=1;i<=x;i++)
 	{
-		if(x%i==0)sonuc++;
+		if(x%i==0)result++;
 	}
-	if(sonuc==2)printf("prime number");
+	if(result==2)printf("prime number");
 	else printf("not prime number");
 	return 0;
 }
